@@ -1,5 +1,5 @@
 # ----------------------- DEP -----------------------------
-#from brain_games.cli import welcome_user
+from brain_games.cli import welcome_user
 
 
 # Main -------------------------------------------------------
@@ -9,8 +9,10 @@ def main():
     import random
     
     # variables
-    correct_answers = 0  # Contador de respuestas correctas
+    correct_answers = 0                                                     # Contador de respuestas correctas
     
+    print("Welcome to the Brain Games!")                                    # Welcome message
+    welcome_user()
     print('Answer "yes" if the number is even, otherwise answer "no".')     # message only 1 time
 
     # main loop
