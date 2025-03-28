@@ -12,7 +12,7 @@ def main():
     correct_answers = 0                                                     # Contador de respuestas correctas
     
     print("Welcome to the Brain Games!")                                    # Welcome message
-    welcome_user()
+    name = welcome_user()
     print('Answer "yes" if the number is even, otherwise answer "no".')     # message only 1 time
 
     # main loop
@@ -32,6 +32,9 @@ def main():
         else:
             print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{answer}'.") # Devuelve mensaje de mala respuesta
             return False                                                                 # Se sale
+        
+        if correct_answers == 3:
+            print(f"Congratulations, {name}!")
             
     return True                                              # Devuelve "True" si contesta las 3 seguidas y salio del ciclo
         
