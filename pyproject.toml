@@ -1,7 +1,7 @@
 [project]
 name = "hexlet-code"
 version = "0.1.0"
-description = "PRUEBA: Juegos mentales (1-9)"
+description = "PRUEBA: Juegos mentales Revision final"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
