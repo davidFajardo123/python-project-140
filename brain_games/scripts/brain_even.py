@@ -13,7 +13,7 @@ def main():
         number = random.randint(1, 100)
         print(f"Question: {number}")
         user_answer = input("Your answer: ").strip().lower()
-        if (number%2==0):
+        if (number % 2 == 0 ):
             answer = "yes"
         else:
             answer = "no"
@@ -22,7 +22,10 @@ def main():
             correct_answers+=1
             print("Correct!")
         else:
-            print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{answer}'.")
+            print((
+                f"'{user_answer}' is wrong answer ;(. "
+                f"Correct answer was '{answer}'."
+            ))
             print(f"Let's try again, {name}!")
             exit()
         

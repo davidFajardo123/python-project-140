@@ -3,7 +3,7 @@ from brain_games.cli import welcome_user
 
 # Funcion genera expresión math rand y su resultado
 def generate_expression():
-    
+
     # Rnd de num 1
     num1 = random.randint(1, 50)
     # Rnd de num 2
@@ -39,7 +39,10 @@ def main():
             # Aumenta el contador
             correct_answers += 1
         else:
-            print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_result}'.")
+            print((
+                f"'{user_answer}' is wrong answer ;(. "
+                f"Correct answer was '{correct_result}'."
+            ))
             print(f"Let's try again, {name}!")
             # Termina el juego si hay un error
             return
