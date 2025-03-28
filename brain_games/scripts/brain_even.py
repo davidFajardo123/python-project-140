@@ -32,13 +32,14 @@ def main():
         else:
             print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{answer}'.") # Devuelve mensaje de mala respuesta
             print(f"Let's try again, {name}!")
-            return False                                                                 # Se sale
-        
+            #return False                                                                 # Se sale
+            exit()
+            
         if correct_answers == 3:
             print(f"Congratulations, {name}!")
-            exit
+            exit()
             
-    return True                                              # Devuelve "True" si contesta las 3 seguidas y salio del ciclo
+    #return True                                              # Devuelve "True" si contesta las 3 seguidas y salio del ciclo
         
 
 # ----------------------------- MAIN ----------------------------|
