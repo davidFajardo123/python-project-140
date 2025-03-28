@@ -3,6 +3,7 @@ from brain_games.cli import welcome_user
 
 # Funcion para saber el numero es primos
 def is_prime(n):
+    
     # Mirar si es divisible por 2
     if n < 2:
         return False
@@ -15,6 +16,7 @@ def is_prime(n):
 
 
 def main():
+    
     # Mensaje de inicio
     print("Welcome to the Brain Games!")
     # Guarda el nombre del jugador
@@ -31,7 +33,7 @@ def main():
         # Esperar respuesta
         user_answer = input("Your answer: ").strip().lower()
         # Sacar respuesta correcta llamando a la funcion
-        correct_answer = "yes" if is_prime(number) else "no"  
+        correct_answer = "yes" if is_prime(number) else "no"
         # Comparar respuesta
         if user_answer == correct_answer:
             print("Correct!")

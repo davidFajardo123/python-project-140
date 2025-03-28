@@ -2,8 +2,10 @@ import random
 import math
 from brain_games.cli import welcome_user
 
+
 # Funcion para generar numeros aleatorios y mcd 
 def generate_numbers():
+    
     # Rnd num 1
     num1 = random.randint(1, 100)
     # Rnd num 2
@@ -15,6 +17,7 @@ def generate_numbers():
 
 
 def main():
+    
     # Mensaje inicio
     print("Welcome to the Brain Games!")
     # Func welcome
