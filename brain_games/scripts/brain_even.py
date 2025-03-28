@@ -1,9 +1,8 @@
 from brain_games.cli import welcome_user
-
+import random
 
 def main():
 
-    import random
     correct_answers = 0
     print("Welcome to the Brain Games!")
     name = welcome_user()
