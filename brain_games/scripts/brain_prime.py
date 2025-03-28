@@ -3,35 +3,45 @@ from brain_games.cli import welcome_user
 
 # Funcion para saber el numero es primos
 def is_prime(n):
-    if n < 2:                               # Mirar si es divisible por 2
+    # Mirar si es divisible por 2
+    if n < 2:
         return False
-    for i in range(2, int(n ** 0.5) + 1):   # Evaluar cantidad de divisores
-        if n % i == 0:                      # Verificar si la division es exacta
+    # Evaluar cantidad de divisores
+    for i in range(2, int(n ** 0.5) + 1):
+        # Verificar si la division es exacta
+        if n % i == 0:
             return False
     return True
 
 
 def main():
-    print("Welcome to the Brain Games!")                            # Mensaje de inicio
-    name = welcome_user()                                           # Guarda el nombre del jugador
-    print('Answer "yes" if given number is prime. Otherwise answer "no".') # Mensaje del juego
+    # Mensaje de inicio
+    print("Welcome to the Brain Games!")
+    # Guarda el nombre del jugador
+    name = welcome_user()
+    # Mensaje del juego
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
 
     correct_answers = 0
-
-    while correct_answers < 3:                                      # Ciclo de preguntas
-        number = random.randint(1, 100)                             # Generar número aleatorio
+    # Ciclo de preguntas
+    while correct_answers < 3:
+        # Generar número aleatorio
+        number = random.randint(1, 100)
         print(f"Question: {number}")
-        user_answer = input("Your answer: ").strip().lower()        # Esperar respuesta
-
-        correct_answer = "yes" if is_prime(number) else "no"        # Sacar respuesta correcta llamando a la funcion
-
-        if user_answer == correct_answer:                           # Comparar respuesta
+        # Esperar respuesta
+        user_answer = input("Your answer: ").strip().lower()
+        # Sacar respuesta correcta llamando a la funcion
+        correct_answer = "yes" if is_prime(number) else "no"  
+        # Comparar respuesta
+        if user_answer == correct_answer:
             print("Correct!")
-            correct_answers += 1                                    # Contador respuestas correctas
+            # Contador respuestas correctas
+            correct_answers += 1
         else:
             print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")
             print(f"Let's try again, {name}!")
-            return                                                  # Termina el juego si hay un error
+            # Termina el juego si hay un error
+            return
 
     print(f"Congratulations, {name}!")
 
