@@ -30,6 +30,6 @@ def main():
             print(f"Congratulations, {name}!")
             exit()
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     main()
