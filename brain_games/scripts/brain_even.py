@@ -36,6 +36,7 @@ def main():
         
         if correct_answers == 3:
             print(f"Congratulations, {name}!")
+            exit
             
     return True                                              # Devuelve "True" si contesta las 3 seguidas y salio del ciclo
         
