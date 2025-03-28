@@ -13,7 +13,7 @@ def main():
         number = random.randint(1, 100)
         print(f"Question: {number}")
         user_answer = input("Your answer: ").strip().lower()
-        if number%2==0:
+        if (number%2==0):
             answer = "yes"
         else:
             answer = "no"
