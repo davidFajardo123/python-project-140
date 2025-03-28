@@ -8,7 +8,8 @@ build:
 	uv build
 
 package-install:
-	uv tool install dist/*.whl
+	uv pip install --no-deps dist/*.whl
 
-make lint:
+lint:
     uv run ruff check brain_games
+	
