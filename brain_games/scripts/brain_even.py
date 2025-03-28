@@ -39,9 +39,7 @@ def main():
             print(f"Congratulations, {name}!")
             exit()
             
-    #return True                                              # Devuelve "True" si contesta las 3 seguidas y salio del ciclo
-        
-
+    #return True                                              # Devuelve "True" si contesta las 3 seguidas y salio del ciclo   
 # ----------------------------- MAIN ----------------------------|
 if __name__ == "__main__":
     main()
