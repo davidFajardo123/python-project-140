@@ -1,6 +1,7 @@
 import random
 from brain_games.cli import welcome_user
 
+
 # Funcion para saber el numero es primos
 def is_prime(n):
     

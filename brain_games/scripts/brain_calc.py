@@ -1,6 +1,7 @@
 import random
 from brain_games.cli import welcome_user
 
+
 # Funcion genera expresión math rand y su resultado
 def generate_expression():
 
@@ -18,7 +19,7 @@ def generate_expression():
 
 
 def main():
-    
+
     print("Welcome to the Brain Games!")
     # Guarda el nombre del jugador
     name = welcome_user()
@@ -46,9 +47,9 @@ def main():
             print(f"Let's try again, {name}!")
             # Termina el juego si hay un error
             return
-        
-    # Mensaje final 
-    print(f"Congratulations, {name}!")                      
+
+    # Mensaje final
+    print(f"Congratulations, {name}!")
 
 
 if __name__ == "__main__":

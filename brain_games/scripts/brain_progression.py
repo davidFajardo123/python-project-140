@@ -1,9 +1,10 @@
 import random
 from brain_games.cli import welcome_user
 
+
 # Funcion para generar progresion aritmetica
 def generate_progression():
-    
+
     # Número inicial
     start = random.randint(1, 20)
     # Paso de la progresión
