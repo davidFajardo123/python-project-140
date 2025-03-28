@@ -31,6 +31,7 @@ def main():
             print("Correct!")                                # Se muestra el mensaje de correcto
         else:
             print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{answer}'.") # Devuelve mensaje de mala respuesta
+            print(f"Let's try again, {name}!")
             return False                                                                 # Se sale
         
         if correct_answers == 3:
