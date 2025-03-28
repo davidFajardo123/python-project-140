@@ -40,7 +40,10 @@ def main():
             # Contador respuestas correctas
             correct_answers += 1
         else:
-            print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")
+            print((
+                f"'{user_answer}' is wrong answer ;(. "
+                f"Correct answer was '{correct_answer}'."
+            ))
             print(f"Let's try again, {name}!")
             # Termina el juego si hay un error
             return
