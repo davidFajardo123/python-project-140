@@ -1,6 +1,7 @@
 from brain_games.cli import welcome_user
 import random
 
+
 def main():
 
     correct_answers = 0
