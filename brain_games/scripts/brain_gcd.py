@@ -1,9 +1,8 @@
-# ------------------------------ DEP -------------------------------------------
 import random
 import math
 from brain_games.cli import welcome_user
 
-# Funcion para generar numeros aleatorios y mcd ----------------------------------------
+# Funcion para generar numeros aleatorios y mcd 
 def generate_numbers():
     
     num1 = random.randint(1, 100)       # Rnd num 1
@@ -12,7 +11,7 @@ def generate_numbers():
 
     return num1, num2, gcd_result       # Retorna los numeros y el mcd
 
-# Main ------------------------------------------------------------------------------
+
 def main():
     print("Welcome to the Brain Games!")                            # Mensaje inicio
     name = welcome_user()                                           # Func welcome
@@ -35,6 +34,6 @@ def main():
 
     print(f"Congratulations, {name}!")                              
 
-# -------------------------- MAIN ---------------------------------------------------------
+
 if __name__ == "__main__":
     main()

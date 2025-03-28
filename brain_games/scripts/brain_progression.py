@@ -1,8 +1,7 @@
-# ---------------------------- DEP ------------------------------------------------------
 import random
 from brain_games.cli import welcome_user
 
-# Funcion para generar progresion aritmetica---------------------------------------------------
+# Funcion para generar progresion aritmetica
 def generate_progression():
     start = random.randint(1, 20)                            # Número inicial
     step = random.randint(2, 10)                             # Paso de la progresión
@@ -17,7 +16,7 @@ def generate_progression():
 
     return progression_str, str(correct_answer)              # Devolver progresion con caracter oculto
 
-# Main -------------------------------------------------------------------------------------
+
 def main():
     print("Welcome to the Brain Games!")                                # Mensaje de inicio
     name = welcome_user()                                               # Guarda el nombre del jugador
@@ -40,6 +39,6 @@ def main():
 
     print(f"Congratulations, {name}!")
 
-# ------------------------- MAIN ------------------------------------
+
 if __name__ == "__main__":
     main()

@@ -1,8 +1,7 @@
-# --------------------- DEP -----------------------------------------------
 import random
 from brain_games.cli import welcome_user
 
-# Funcion que genera una expresión matemática aleatoria y su resultado -------------
+# Funcion genera expresión math rand y su resultado
 def generate_expression():
     
     num1 = random.randint(1, 50)                # Rnd de num 1
@@ -14,11 +13,12 @@ def generate_expression():
 
     return expression, result                   # Retorna expresion y resultado
 
-# Main ---------------------------------------------------------------------------------
+
 def main():
     
     print("Welcome to the Brain Games!")             
-    name = welcome_user()                                    # Guarda el nombre del jugador
+    # Guarda el nombre del jugador
+    name = welcome_user()                                    
     print("What is the result of the expression?")  
 
     correct_answers = 0                                      # Cont de preguntas
@@ -38,6 +38,6 @@ def main():
 
     print(f"Congratulations, {name}!")                      # Mensaje final 
 
-# ------------------------- MAIN ---------------------------------------------
+
 if __name__ == "__main__":
     main()

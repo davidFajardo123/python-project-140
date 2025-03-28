@@ -1,8 +1,7 @@
-# -------------------------- DEP ---------------------------------
 import random
 from brain_games.cli import welcome_user
 
-# Funcion para saber el numero es primos ----------------------------------------------------------
+# Funcion para saber el numero es primos
 def is_prime(n):
     if n < 2:                               # Mirar si es divisible por 2
         return False
@@ -11,7 +10,7 @@ def is_prime(n):
             return False
     return True
 
-# Main ----------------------------------------------------------------------------------------
+
 def main():
     print("Welcome to the Brain Games!")                            # Mensaje de inicio
     name = welcome_user()                                           # Guarda el nombre del jugador
@@ -36,6 +35,6 @@ def main():
 
     print(f"Congratulations, {name}!")
 
-# ------------------- MAIN ------------------------------------------
+
 if __name__ == "__main__":
     main()
