@@ -21,7 +21,7 @@ def ans_correct(correct_answers):
 
 
 # GEN : WRONG ANSWER
-def fail(user_answer,answer,name):
+def fail(user_answer, answer, name):
     
     print((
         f"'{user_answer}' is wrong answer ;(. "
@@ -32,7 +32,7 @@ def fail(user_answer,answer,name):
 
 
 # GEN : CONGRATS USER
-def congrats(correct_answers,name):
+def congrats(correct_answers, name):
     
     if correct_answers == 3:
         print(f"Congratulations, {name}!")
@@ -40,7 +40,7 @@ def congrats(correct_answers,name):
     
 
 # GEN : NEXT QUESTION CONDITION
-def next_question(answer,user_answer,name,correct_answers):
+def next_question(answer, user_answer, name, correct_answers):
     
     # Next question condition
     if str(answer) == str(user_answer):
@@ -75,7 +75,7 @@ def game_even(name):
             answer = "no"
         
         # Verify
-        correct_answers = next_question(answer,user_answer,name,correct_answers)
+        correct_answers = next_question(answer, user_answer, name, correct_answers)
 
 
 # JUEGO CALC : CONDITION
@@ -112,7 +112,7 @@ def game_calc(name):
         user_answer = input("Your answer: ").strip().lower()
         
         # Verify
-        correct_answers = next_question(answer,user_answer,name,correct_answers)
+        correct_answers = next_question(answer, user_answer, name, correct_answers)
     
 
 # JUEGO GCD : CONDITION
@@ -145,7 +145,7 @@ def game_gcd(name):
         user_answer = input("Your answer: ").strip()
         
         # Verify
-        correct_answers = next_question(answer,user_answer,name,correct_answers)
+        correct_answers = next_question(answer, user_answer, name, correct_answers)
         
         
 # JUEGO PROGRESION : CONDITION
@@ -188,7 +188,7 @@ def game_progresion(name):
         user_answer = input("Your answer: ").strip()
 
         # Verify
-        correct_answers = next_question(answer,user_answer,name,correct_answers)
+        correct_answers = next_question(answer, user_answer, name, correct_answers)
 
 
 # JUEGO PRIMO : CONDITION
@@ -223,4 +223,4 @@ def game_prime(name):
         user_answer = input("Your answer: ").strip().lower()
         
         # Verify
-        correct_answers = next_question(answer,user_answer,name,correct_answers)
+        correct_answers = next_question(answer, user_answer, name, correct_answers)
