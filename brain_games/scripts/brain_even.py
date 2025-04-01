@@ -1,6 +1,7 @@
 import random
 import prompt
 
+
 def main():
 
     correct_answers = 0

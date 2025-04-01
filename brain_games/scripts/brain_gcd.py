@@ -2,6 +2,7 @@ import random
 import math
 import prompt
 
+
 # Funcion para generar numeros aleatorios y mcd 
 def generate_numbers():
     

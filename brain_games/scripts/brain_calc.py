@@ -1,6 +1,7 @@
 import random
 import prompt
 
+
 # Funcion genera expresión math rand y su resultado
 def generate_expression():
 

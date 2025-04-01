@@ -1,6 +1,7 @@
 import random
 import prompt
 
+
 # Funcion para saber el numero es primos
 def is_prime(n):
     
