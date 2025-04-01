@@ -1,12 +1,12 @@
-from brain_games.cli import welcome_user
 import random
-
+import prompt
 
 def main():
 
     correct_answers = 0
     print("Welcome to the Brain Games!")
-    name = welcome_user()
+    name = prompt.string("May I have your name? ")
+    print(f"Hello, {name}!")
     print('Answer "yes" if the number is even, otherwise answer "no".')
 
     while correct_answers < 3:

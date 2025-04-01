@@ -1,6 +1,6 @@
 import random
 from brain_games.cli import welcome_user
-
+import prompt
 
 # Funcion para saber el numero es primos
 def is_prime(n):
@@ -21,7 +21,8 @@ def main():
     # Mensaje de inicio
     print("Welcome to the Brain Games!")
     # Guarda el nombre del jugador
-    name = welcome_user()
+    name = prompt.string("May I have your name? ")
+    print(f"Hello, {name}!")
     # Mensaje del juego
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
 

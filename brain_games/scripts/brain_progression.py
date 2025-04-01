@@ -1,5 +1,6 @@
 import random
 from brain_games.cli import welcome_user
+import prompt
 
 
 # Funcion para generar progresion aritmetica
@@ -30,7 +31,8 @@ def main():
     # Mensaje de inicio
     print("Welcome to the Brain Games!")
     # Guarda el nombre del jugador
-    name = welcome_user()
+    name = prompt.string("May I have your name? ")
+    print(f"Hello, {name}!")
     # Mensaje de juego
     print("What number is missing in the progression?")
     

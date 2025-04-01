@@ -1,7 +1,7 @@
 import random
 import math
 from brain_games.cli import welcome_user
-
+import prompt
 
 # Funcion para generar numeros aleatorios y mcd 
 def generate_numbers():
@@ -21,7 +21,8 @@ def main():
     # Mensaje inicio
     print("Welcome to the Brain Games!")
     # Func welcome
-    name = welcome_user()
+    name = prompt.string("May I have your name? ")
+    print(f"Hello, {name}!")
     # Mensaje de juego
     print("Find the greatest common divisor of given numbers.")
     # Contador preguntas
