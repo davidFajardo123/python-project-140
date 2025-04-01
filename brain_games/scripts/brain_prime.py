@@ -1,19 +1,12 @@
-import random
-import prompt
-
-
-
+from brain_games.cli import welcome_user
+from brain_games.cli import game_prime
 
 
 def main():
     
-    # Mensaje de inicio
-    print("Welcome to the Brain Games!")
-    # Guarda el nombre del jugador
-    name = prompt.string("May I have your name? ")
-    print(f"Hello, {name}!")
+    name = welcome_user()
+    game_prime(name)
     
-
 
 if __name__ == "__main__":
     main()
