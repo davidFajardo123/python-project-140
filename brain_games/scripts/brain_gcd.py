@@ -1,6 +1,5 @@
 import random
 import math
-from brain_games.cli import welcome_user
 import prompt
 
 # Funcion para generar numeros aleatorios y mcd 
