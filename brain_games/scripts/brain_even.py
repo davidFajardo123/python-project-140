@@ -1,38 +1,11 @@
-import random
-import prompt
+from brain_games.cli import welcome_user
+from brain_games.cli import game_even
 
 
 def main():
 
-    correct_answers = 0
-    print("Welcome to the Brain Games!")
-    name = prompt.string("May I have your name? ")
-    print(f"Hello, {name}!")
-    print('Answer "yes" if the number is even, otherwise answer "no".')
-
-    while correct_answers < 3:
-        number = random.randint(1, 100)
-        print(f"Question: {number}")
-        user_answer = input("Your answer: ").strip().lower()
-        if (number % 2 == 0):
-            answer = "yes"
-        else:
-            answer = "no"
-
-        if answer == user_answer:
-            correct_answers += 1
-            print("Correct!")
-        else:
-            print((
-                f"'{user_answer}' is wrong answer ;(. "
-                f"Correct answer was '{answer}'."
-            ))
-            print(f"Let's try again, {name}!")
-            exit()
-        
-        if correct_answers == 3:
-            print(f"Congratulations, {name}!")
-            exit()
+    name = welcome_user()
+    game_even(name)
 
 
 if __name__ == "__main__":
