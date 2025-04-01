@@ -40,15 +40,15 @@ def congrats(correct_answers, name):
     
 
 # GEN : NEXT QUESTION CONDITION
-def next_question(answer, user_answer, name, correct_answers):
+def next_q(answer, user_answer, name, correct_answers):
     
     # Next question condition
     if str(answer) == str(user_answer):
         correct_answers = ans_correct(correct_answers)
     else:
-        fail(user_answer,answer,name)
+        fail(user_answer, answer, name)
     
-    congrats(correct_answers,name)
+    congrats(correct_answers, name)
     return correct_answers
         
         
@@ -75,7 +75,7 @@ def game_even(name):
             answer = "no"
         
         # Verify
-        correct_answers = next_question(answer, user_answer, name, correct_answers)
+        correct_answers = next_q(answer, user_answer, name, correct_answers)
 
 
 # JUEGO CALC : CONDITION
@@ -112,7 +112,7 @@ def game_calc(name):
         user_answer = input("Your answer: ").strip().lower()
         
         # Verify
-        correct_answers = next_question(answer, user_answer, name, correct_answers)
+        correct_answers = next_q(answer, user_answer, name, correct_answers)
     
 
 # JUEGO GCD : CONDITION
@@ -145,7 +145,7 @@ def game_gcd(name):
         user_answer = input("Your answer: ").strip()
         
         # Verify
-        correct_answers = next_question(answer, user_answer, name, correct_answers)
+        correct_answers = next_q(answer, user_answer, name, correct_answers)
         
         
 # JUEGO PROGRESION : CONDITION
@@ -188,7 +188,7 @@ def game_progresion(name):
         user_answer = input("Your answer: ").strip()
 
         # Verify
-        correct_answers = next_question(answer, user_answer, name, correct_answers)
+        correct_answers = next_q(answer, user_answer, name, correct_answers)
 
 
 # JUEGO PRIMO : CONDITION
@@ -223,4 +223,4 @@ def game_prime(name):
         user_answer = input("Your answer: ").strip().lower()
         
         # Verify
-        correct_answers = next_question(answer, user_answer, name, correct_answers)
+        correct_answers = next_q(answer, user_answer, name, correct_answers)
