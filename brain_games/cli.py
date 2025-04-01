@@ -1,57 +1,93 @@
-# ----------------- DEP ------------------
 import prompt
 import random
 import math
 
 
-# WELCOME USER
+# GEN : WELCOME USER
 def welcome_user():
+    
     print("Welcome to the Brain Games!")
     name = prompt.string("May I have your name? ")
     print(f"Hello, {name}!")
     return name
 
 
+# GEN : CORRECT ANSWER
+def ans_correct(correct_answers):
+    
+    correct_answers += 1
+    print("Correct!")
+    return correct_answers
+
+
+# GEN : WRONG ANSWER
+def fail(user_answer,answer,name):
+    
+    print((
+        f"'{user_answer}' is wrong answer ;(. "
+        f"Correct answer was '{answer}'."
+    ))
+    print(f"Let's try again, {name}!")
+    exit()
+
+
+# GEN : CONGRATS USER
+def congrats(correct_answers,name):
+    
+    if correct_answers == 3:
+        print(f"Congratulations, {name}!")
+        exit()
+    
+
+# GEN : NEXT QUESTION CONDITION
+def next_question(answer,user_answer,name,correct_answers):
+    
+    # Next question condition
+    if str(answer) == str(user_answer):
+        correct_answers = ans_correct(correct_answers)
+    else:
+        fail(user_answer,answer,name)
+    
+    congrats(correct_answers,name)
+    return correct_answers
+        
+        
 # JUEGO DE PARES 
 def game_even(name):
-    
-    correct_answers = 0
+          
+    # Game message
     print('Answer "yes" if the number is even, otherwise answer "no".')
     
+    correct_answers = 0
     while correct_answers < 3:
+        
+        # Game variables + question
         number = random.randint(1, 100)
         print(f"Question: {number}")
+        
+        # User input
         user_answer = input("Your answer: ").strip().lower()
+        
+        # Game condition
         if (number % 2 == 0):
             answer = "yes"
         else:
             answer = "no"
-
-        if answer == user_answer:
-            correct_answers += 1
-            print("Correct!")
-        else:
-            print((
-                f"'{user_answer}' is wrong answer ;(. "
-                f"Correct answer was '{answer}'."
-            ))
-            print(f"Let's try again, {name}!")
-            exit()
         
-        if correct_answers == 3:
-            print(f"Congratulations, {name}!")
-            exit()
+        # Verify
+        correct_answers = next_question(answer,user_answer,name,correct_answers)
 
 
-# JUEGO CALC
+# JUEGO CALC : CONDITION
 def generate_expression():
 
     # Rnd de num 1
     num1 = random.randint(1, 50)
     # Rnd de num 2
     num2 = random.randint(1, 50)
+    # Rnd operador entre opciones
     operator = random.choice(["+", "-", "*"])
-
+    # Set expression
     expression = f"{num1} {operator} {num2}"
     # Evalúa la expresión matemática
     result = eval(expression)
@@ -59,38 +95,27 @@ def generate_expression():
     return expression, result
 
 
+# JUEGO CALC : GAME
 def game_calc(name):
     
+    # Game message
     print("What is the result of the expression?")
-    # Cont de preguntas
+    
     correct_answers = 0
-    
-    # Ciclo de preguntas
     while correct_answers < 3:
-        # Llamado a la funcion para generar expresion
-        expression, correct_result = generate_expression()
+        
+        # Game variables + question
+        expression, answer = generate_expression()
         print(f"Question: {expression}")
-        # Esperando respuesta del usuario
-        user_answer = input("Your answer: ").strip()
-        # Evalua si es la misma respuesta
-        if user_answer == str(correct_result):
-            print("Correct!")
-            # Aumenta el contador
-            correct_answers += 1
-        else:
-            print((
-                f"'{user_answer}' is wrong answer ;(. "
-                f"Correct answer was '{correct_result}'."
-            ))
-            print(f"Let's try again, {name}!")
-            # Termina el juego si hay un error
-            return
-
-    # Mensaje final
-    print(f"Congratulations, {name}!")
+        
+        # User input
+        user_answer = input("Your answer: ").strip().lower()
+        
+        # Verify
+        correct_answers = next_question(answer,user_answer,name,correct_answers)
     
 
-# JUEGO MCD 
+# JUEGO GCD : CONDITION
 def generate_numbers():
     
     # Rnd num 1
@@ -103,37 +128,27 @@ def generate_numbers():
     return num1, num2, gcd_result
     
 
+# JUEGO GCD : GAME
 def game_gcd(name):
-    # Mensaje de juego
+    
+    # Game message
     print("Find the greatest common divisor of given numbers.")
-    # Contador preguntas
+    
     correct_answers = 0
-    # ciclo preguntas
     while correct_answers < 3:
-        # Llamado a funcion de mcd
-        num1, num2, correct_gcd = generate_numbers()
-        # Mostrar los numeros random
+        
+        # Game variables + question
+        num1, num2, answer = generate_numbers()
         print(f"Question: {num1} {num2}")
-        # Esperar respuesta del usuario
+        
+        # user input
         user_answer = input("Your answer: ").strip()
-        # Verificar respuesta
-        if user_answer == str(correct_gcd):
-            print("Correct!")
-            # Contador de pregunta correcta
-            correct_answers += 1
-        else:
-            print((
-                f"'{user_answer}' is wrong answer ;(. "
-                f"Correct answer was '{correct_gcd}'."
-            ))
-            print(f"Let's try again, {name}!")
-            # Termina el juego si hay un error
-            return
-
-    print(f"Congratulations, {name}!")
-    
-    
-# JUEGO PROGRESION
+        
+        # Verify
+        correct_answers = next_question(answer,user_answer,name,correct_answers)
+        
+        
+# JUEGO PROGRESION : CONDITION
 def generate_progression():
 
     # Número inicial
@@ -156,39 +171,27 @@ def generate_progression():
     return progression_str, str(correct_answer)
 
 
+# JUEGO PROGRESION : GAME
 def game_progresion(name):
     
-    # Mensaje de juego
+    # Game message
     print("What number is missing in the progression?")
     
-    # Cont de preguntas
     correct_answers = 0
-    
-    # Ciclo preguntas
     while correct_answers < 3:
-        # Llama a la funcion de progresion aritmetica
-        progression_str, correct_answer = generate_progression()
-        # Mostrar regresion
+        
+        # Game variables + question
+        progression_str, answer = generate_progression()
         print(f"Question: {progression_str}")
-        # Esperar respuyesta usuario
+        
+        # user input
         user_answer = input("Your answer: ").strip()
 
-        if user_answer == correct_answer:
-            print("Correct!")
-            # Contador de respuestas correctas
-            correct_answers += 1
-        else:
-            print((
-                f"'{user_answer}' is wrong answer ;(. "
-                f"Correct answer was '{correct_answer}'."
-            ))
-            print(f"Let's try again, {name}!")
-            # Termina el juego si hay un error
-            return
+        # Verify
+        correct_answers = next_question(answer,user_answer,name,correct_answers)
 
-    print(f"Congratulations, {name}!")
 
-# JUEGO PRIMO 
+# JUEGO PRIMO : CONDITION
 def is_prime(n):
     
     # Mirar si es divisible por 2
@@ -202,33 +205,22 @@ def is_prime(n):
     return True
 
 
+# JUEGO PRIMO : GAME
 def game_prime(name):
     
-    # Mensaje del juego
+    # Game message
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
 
     correct_answers = 0
-    # Ciclo de preguntas
     while correct_answers < 3:
-        # Generar número aleatorio
+        
+        # Game variables + question
         number = random.randint(1, 100)
+        answer = "yes" if is_prime(number) else "no"
         print(f"Question: {number}")
-        # Esperar respuesta
+        
+        # user input
         user_answer = input("Your answer: ").strip().lower()
-        # Sacar respuesta correcta llamando a la funcion
-        correct_answer = "yes" if is_prime(number) else "no"
-        # Comparar respuesta
-        if user_answer == correct_answer:
-            print("Correct!")
-            # Contador respuestas correctas
-            correct_answers += 1
-        else:
-            print((
-                f"'{user_answer}' is wrong answer ;(. "
-                f"Correct answer was '{correct_answer}'."
-            ))
-            print(f"Let's try again, {name}!")
-            # Termina el juego si hay un error
-            return
-
-    print(f"Congratulations, {name}!")
+        
+        # Verify
+        correct_answers = next_question(answer,user_answer,name,correct_answers)
