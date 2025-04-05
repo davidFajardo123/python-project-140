@@ -1,4 +1,6 @@
-from brain_games.cli import *
+from brain_games.cli import welcome_user
+from brain_games.cli import next_q
+import random
 
 
 # JUEGO PRIMO : CONDITION

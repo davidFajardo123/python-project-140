@@ -1,6 +1,4 @@
 import prompt
-import random
-import math
 
 
 # GEN : WELCOME USER
