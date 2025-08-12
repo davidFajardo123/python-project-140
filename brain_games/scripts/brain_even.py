@@ -2,7 +2,6 @@ from brain_games.cli import welcome_user
 from brain_games.cli import next_q
 import random
 
-
 # JUEGO DE PARES 
 def game_even(name):
           
