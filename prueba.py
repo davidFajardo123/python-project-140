@@ -16,6 +16,7 @@ while (numero != 5):
     case _:
         print("...Opcion no valida...")
         print("adios")
+        print("algo")
         break
 
 
