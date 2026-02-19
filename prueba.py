@@ -15,6 +15,8 @@ while (numero != 5):
         print("....Saliendo...")
     case _:
         print("...Opcion no valida...")
+        print("adios")
         break
+
 
 print("Fuera del ciclo")
